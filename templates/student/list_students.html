@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block name_of_title %} List of students {% endblock %}
+{% block content %}
+    <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name of student</th>
+            <th>Age</th>
+            <th>CNP</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in all_students %}
+        <tr>
+            <td>{{ student.first_name }} {{ student.last_name }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.cnp }}</td>
+            <td><a href="{% url 'update-student' student.id %}" class="btn btn-primary">Update</a>
+            <a href="{% url 'detail-student' student.id %}" class="btn btn-outline-primary">Detail</a>
+                <a href="{% url 'delete-student' student.id %}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}

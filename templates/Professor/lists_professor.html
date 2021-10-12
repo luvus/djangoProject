@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block name_of_title %} List of professor {% endblock %}
+{% block content %}
+    <table class ='table table-hover'>
+    <thead>
+    <tr>
+        <th>Name of professor</th>
+        <th>Subject</th>
+        <th>Date of employment</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <body>{% for professor in all_professors %}</body>
+        <tr>
+            <td>{{ professor.first_name_professor }} {{ professor.last_name_professor }}</td>
+            <td>{{professor.subject}}</td>
+            <td>{{professor.date_of_employment}}</td>
+            <td><a href="{% url 'update-professor'  professor.id%}" class="btn btn-success">Update professor</a>
+            <a href="{% url 'detail-professor'  professor.id%}" class="btn btn-outline-dark">Detail professor</a>
+                <a href="{% url 'delete-professor'  professor.id%}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    {%  endfor %}
+    </tbody>
+    </table>
+{% endblock %}

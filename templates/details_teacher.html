@@ -1,0 +1,51 @@
+
+
+{% extends 'base.html' %}
+{% block name_of_title %}
+    List of teacher
+{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h3>Lista de profesori</h3>
+</div>
+<div class="row">
+{% for teacher in all_teachers %}
+<div class="card" style="width: 18rem;">
+ <div class="card-body">
+     <h5 class="card-title">{{teacher.first_name_teacher }} {{teacher.last_name_teacher }}</h5>
+     <p class= "card-text"> Materie: {{ teacher.materia }}</p>
+ </div>
+</div>
+{% endfor %}
+</div>
+{#<a class="btn btn-primary" href ="{% url 'all_students' %}">Go to student list</a>#}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+<!--
+{##}
+{##}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{#<h1>Lista de profesori</h1>#}
+{#{% for teacher in all_teachers %}#}
+{#    <p>{{ teacher.first_name_teacher }}</p>#}
+{#    <p>{{ teacher.last_name_teacher }}</p>#}
+{#    <p>{{ teacher.materia }}</p>#}
+{#{% endfor %}#}
+{#<a href="{% url 'all_students' %}">Go to list of students</a>#}
+{#</body>#}
+{#</html>#} -->

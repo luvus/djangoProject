@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block name_of_title %}Detail professor{% endblock %}
+{% block content %}
+    <div class="card text-center">
+  <div class="card-header" style="background-color:#5bccf6 ">
+    Details of professor
+  </div>
+  <div class="card-body" style="background-color: #fcde67">
+    <h5 class="card-title">{{ professor.first_name_professor }}{{ professor.last_name_professor }}</h5>
+    <p class="card-text">Email adress : {{ professor.email }}</p>
+      <p class="card-text">Date of Employment: {{ professor.date_of_employment }}</p>
+    <a href="{% url 'list-of-professor' %}" class="btn btn-outline-danger">Cancel</a>
+  </div>
+  <div class="card-footer text-muted" style="background-color: #5bccf6">
+    Created at {{ professor.created_at }}
+  </div>
+</div>
+{% endblock %}

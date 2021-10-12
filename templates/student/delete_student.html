@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block name_of_title %}Delete student{% endblock %}
+{% block content %}
+    <form method="post">
+    {% csrf_token %}
+    <p>Esti sigur ca vrei sa stergi pe {{ student.first_name }} {{ student.last_name }} ?? </p>
+    <button type = "submit" class="btn btn-success">Yes</button>
+    <a href="{% url 'list-of-students' %}" class ='btn btn-default'>No</a>
+    </form>
+{% endblock %}

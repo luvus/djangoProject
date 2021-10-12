@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block name_of_title %}Delete Professor{% endblock %}
+{% block content %}
+    <form method="post">
+    {% csrf_token %}
+    <p>Esti sigur ca vrei sa stergi pe {{ professor.first_name_professor }} {{ professor.last_name_professor }} ?? </p>
+    <button type = "submit" class="btn btn-success">Yes</button>
+    <a href="{% url 'list-of-professor' %}" class ='btn btn-default'>No</a>
+    </form>
+{% endblock %}

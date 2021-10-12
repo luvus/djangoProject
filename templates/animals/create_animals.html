@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block name_of_title %} {% endblock %}
+
+{% block content %}
+    <form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="btn btn-success">Create a new animals</button>
+    </form>
+{% endblock %}
